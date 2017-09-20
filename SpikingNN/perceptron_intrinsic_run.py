@@ -82,9 +82,9 @@ for c_intr_out in np.arange(10):
         params_set['c_diff'] = c_diff
         params_set['c_intr_out'] = c_intr_out
         params_to_optimize = params_set
-        #web = ['imshow_forward_weights_H','imshow_intrinsic_weights_H']
+        web = ['imshow_forward_weights_H','imshow_intrinsic_weights_H', 'plot_H']
         #web = ['plot_H']
-        web = False
+        #web = False
                 
         #params_to_optimize['c_intr_out'] = 0.0
         NN = Perceptron(X, y, params_to_optimize, 
@@ -106,15 +106,16 @@ for c_intr_out in np.arange(10):
         NN.run(20000*ms) #100
         tries = [accuracy_score(NN.shown_labels[-100:], NN.predictions[-100:]), params_to_optimize]
         accuracies.append(tries)
-        
-        NN.web = ['imshow_forward_weights_H','imshow_intrinsic_weights_H']
-        NN.imshow_forward_weights('H',5,2,5,5,j)
-        NN.imshow_intrinsic_weights('H',5,2,2,5,j)
-        NN.web = False
-        #accuracies.append(accuracy_score(NN.shown_labels[-100:], NN.predictions[-100:]))
-        print (accuracies[-1][0])
-        j += 1
-        #NN.save_weights('./NN.net')
+
+        #save final figures for multiple simulations
+        if 0:
+            NN.web = ['imshow_forward_weights_H','imshow_intrinsic_weights_H']
+       	    NN.imshow_forward_weights('H',5,2,5,5,j)
+            NN.imshow_intrinsic_weights('H',5,2,2,5,j)
+            #NN.web = False
+            print (accuracies[-1][0])
+            j += 1
+            #NN.save_weights('./NN.net')
 accs = []
 for acc in accuracies:
     accs.append(acc[0])

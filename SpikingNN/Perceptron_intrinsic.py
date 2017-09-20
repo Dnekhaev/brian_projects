@@ -372,6 +372,7 @@ class Perceptron(object):
         legend(loc='best')
         if self.web:
             savefig('./tmp/image_H.jpg')
+            print('SAVED FIG', './tmp/image_H.jpg')
             clf()
             close()
         else:
@@ -502,6 +503,7 @@ class Perceptron(object):
             axis('off')
             if self.web:
                 savefig('./tmp/'+name+'.jpg')   
+                print('SAVED FIG', './tmp/'+name+'.jpg')
                 clf()  
                 close() 
             else:

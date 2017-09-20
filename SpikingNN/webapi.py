@@ -21,10 +21,10 @@ def Start_web_weights():
         #img = plt.imread('./tmp/imshow_input_weights.jpg')
         if 1:
             try:
-                img1 = Image.open('./tmp/imshow_input_inverse_weights.jpg')
+                img1 = Image.open('./tmp/sim 0 imshow_input_inverse_weights.jpg')
                 #img = Image.open('./tmp/image_H.jpg')
-                img2 = Image.open('./tmp/imshow_input_weights.jpg')
-                img3 = Image.open('./tmp/imshow_intrinsic_weights.jpg')
+                img2 = Image.open('./tmp/sim 0 imshow_input_weights.jpg')
+                img3 = Image.open('./tmp/sim 0 imshow_intrinsic_weights.jpg')
             except OSError:
                 print('got OSError but DEAL with it')
                 time.sleep(0.1)
