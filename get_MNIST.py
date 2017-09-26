@@ -9,7 +9,7 @@ from matplotlib.pyplot import *
 from brian2 import *
 
 # specify the location of the MNIST data
-MNIST_data_path = './data/'
+MNIST_data_path = '../data/raw/'
 
 
 def get_labeled_data(picklename, bTrain = True):
